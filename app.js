@@ -8,7 +8,7 @@ const knex = require('knex')(require('./knexfile.js')[process.env.NODE_ENV||'dev
 app.use(express.json());
 
 app.get('/pets', function(req, res) {
-  knex('pet')
+  knex('pet_type')
     .select('*')
     .then(data => res.status(200).json(data))
     .catch(err =>
